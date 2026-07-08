@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le Plan de Vol — Aperçu gratuit (2 sections offertes)</title>
+<meta name="description" content="Écris les 2 premières sections de ton business plan gratuitement : copie le prompt, l'IA t'interviewe puis rédige la section. Sans carte bancaire.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Le Plan de Vol — 2 sections offertes">
+<meta property="og:description" content="Teste la méthode : 2 prompts gratuits pour écrire ton business plan avec l'IA.">
+<meta name="theme-color" content="#0B1120">
+<style>html,body{margin:0;padding:0}*{box-sizing:border-box}</style>
+</head>
+<body>
+<title>Le Plan de Vol — Aperçu gratuit (2 sections offertes)</title>
+<style>
+  /* DA cockpit — thème sombre unique (bleu-nuit + ambre) */
+  :root,
+  :root[data-theme="light"],
+  :root[data-theme="dark"]{
+    --bg:#0B1120; --panel:#131D30; --panel-2:#0F1930; --ink:#EAF0F8; --muted:#8A97AD;
+    --accent:#F2A31C; --accent-2:#FFC85C; --line:#25324B; --stub:#0E1626;
+    --free:#34D399; --free-bg:rgba(52,211,153,.14);
+    --code-bg:#0A101F; --code-ink:#CBD8EC; --code-line:#1E2A42;
+    --glow:rgba(242,163,28,.16);
+    --shadow:0 18px 60px rgba(0,0,0,.55);
+    --focus:#F2A31C;
+  }
+  *{box-sizing:border-box}
+  body{margin:0}
+  .page{background:var(--bg);color:var(--ink);min-height:100vh;overflow-x:hidden;
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;
+    -webkit-font-smoothing:antialiased;padding:clamp(20px,5vw,52px) 20px 0}
+  .wrap{width:100%;max-width:720px;margin:0 auto}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,"Cascadia Mono",monospace}
+
+  .top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .brand{display:inline-flex;align-items:center;gap:9px;font-weight:700;letter-spacing:-.01em}
+  .brand .m{color:var(--accent);font-size:17px}
+  .free-badge{display:inline-flex;align-items:center;gap:8px;font-family:ui-monospace,monospace;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--free);
+    background:var(--free-bg);border:1px solid color-mix(in srgb,var(--free) 40%,transparent);
+    border-radius:999px;padding:6px 13px;font-weight:600}
+  .free-badge .d{width:7px;height:7px;border-radius:50%;background:var(--free)}
+
+  h1{font-size:clamp(29px,6.4vw,48px);line-height:1.06;margin:28px 0 .2em;letter-spacing:-.025em;
+     text-wrap:balance;font-weight:800}
+  h1 .amb{color:var(--accent)}
+  .lede{font-size:clamp(16px,2.4vw,19px);color:var(--muted);margin:0;max-width:58ch}
+
+  .how{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0 6px}
+  @media(max-width:560px){.how{grid-template-columns:1fr}}
+  .how .st{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px 16px 15px}
+  .how .n{font-family:ui-monospace,monospace;font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.1em}
+  .how .st p{margin:7px 0 0;font-size:14px;color:var(--muted)}
+  .how .st b{color:var(--ink)}
+
+  .divider{display:flex;align-items:center;gap:14px;margin:44px 0 26px}
+  .divider::before,.divider::after{content:"";height:1px;background:var(--line);flex:1}
+  .divider span{font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+  .prompt{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    box-shadow:var(--shadow);margin-bottom:22px}
+  .prompt-head{padding:18px 20px 14px;display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+  .ptitle{margin:0;font-size:19px;font-weight:800;letter-spacing:-.01em;display:flex;align-items:center;gap:9px}
+  .ptitle .sec{font-family:ui-monospace,monospace;font-size:12px;color:var(--free);border:1px solid color-mix(in srgb,var(--free) 40%,transparent);
+    background:var(--free-bg);border-radius:6px;padding:2px 7px;letter-spacing:.06em}
+  .pwhen{margin:6px 0 0;color:var(--muted);font-size:14px}
+  .codewrap{position:relative;margin:0 20px}
+  pre{margin:0;background:var(--code-bg);border:1px solid var(--code-line);border-radius:11px;
+    padding:16px 16px;overflow-x:auto}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,"Cascadia Mono",monospace;font-size:12.5px;
+    line-height:1.62;color:var(--code-ink);white-space:pre;display:block}
+  .copy{position:absolute;top:10px;right:10px;display:inline-flex;align-items:center;gap:7px;
+    background:var(--accent);color:#0B1120;border:0;border-radius:9px;padding:8px 12px;cursor:pointer;
+    font-family:ui-monospace,monospace;font-size:12px;font-weight:700;letter-spacing:.04em;
+    transition:filter .12s ease,transform .12s ease}
+  .copy:hover{filter:brightness(1.07);transform:translateY(-1px)}
+  .copy:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+  .copy.ok{background:var(--free);color:#fff}
+  .pvars{margin:14px 20px 20px;font-size:13px;color:var(--muted)}
+  .pvars .mono{color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);
+    padding:2px 6px;border-radius:5px}
+
+  /* locked list */
+  .locked{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);
+    border-radius:16px;padding:24px clamp(18px,4vw,26px)}
+  .locked h2{margin:0 0 6px;font-size:clamp(20px,3.6vw,26px);letter-spacing:-.02em;font-weight:800}
+  .locked .sub{margin:0 0 18px;color:var(--muted);font-size:15px}
+  .lgrid{display:grid;gap:10px}
+  .lrow{display:flex;gap:13px;align-items:center;background:var(--panel);border:1px solid var(--line);
+    border-radius:11px;padding:13px 15px}
+  .lrow .lk{flex:0 0 auto;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;
+    background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font-size:14px}
+  .lrow .lt{font-weight:600;font-size:15px}
+  .lrow .ld{color:var(--muted);font-size:13px;margin-top:1px}
+  .lrow .num{margin-left:auto;font-family:ui-monospace,monospace;font-size:12px;color:var(--muted)}
+
+  .buybox{margin-top:22px;text-align:center}
+  .price{display:flex;align-items:baseline;justify-content:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
+  .price .big{font-size:clamp(34px,8vw,50px);font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+  .price .cur{font-size:20px;font-weight:700;color:var(--accent)}
+  .price .was{color:var(--muted);font-size:15px}
+  .price .was s{opacity:.7}
+  .cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;
+    background:var(--accent);color:#0B1120;font-size:17px;font-weight:700;padding:16px 30px;border-radius:12px;
+    border:0;cursor:pointer;box-shadow:0 8px 22px var(--glow);transition:transform .12s ease,filter .12s ease}
+  .cta:hover{filter:brightness(1.06);transform:translateY(-1px)}
+  .cta:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+  .seemore{display:inline-block;margin-top:14px;font-size:14px;color:var(--accent);text-decoration:none;
+    border-bottom:1px solid color-mix(in srgb,var(--accent) 40%,transparent)}
+  .seemore:hover{border-bottom-color:var(--accent)}
+  .seemore:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+  .guar{margin-top:14px;font-size:13px;color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);margin-top:46px;padding:26px 0 44px;color:var(--muted);
+    font-size:12.5px;line-height:1.8;text-align:center}
+  footer .mono{letter-spacing:.04em}
+  footer .sep{opacity:.5;margin:0 7px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="page">
+  <div class="wrap">
+
+    <div class="top">
+      <span class="brand"><span class="m">✈</span>Le Plan de Vol</span>
+      <span class="free-badge"><span class="d"></span>Aperçu gratuit · sans carte bancaire</span>
+    </div>
+
+    <h1>Écris les <span class="amb">2 premières sections</span> de ton business plan. Gratuitement, maintenant.</h1>
+    <p class="lede">Pas de page blanche : tu copies un prompt, l'IA (ChatGPT ou Claude) t'interviewe question par question, puis <b>rédige la section à ta place</b>. Voici les 2 premières, offertes.</p>
+
+    <div class="how">
+      <div class="st"><div class="n">01</div><p><b>Copie</b> le prompt ci-dessous.</p></div>
+      <div class="st"><div class="n">02</div><p><b>Colle-le</b> dans ChatGPT ou Claude (gratuit), remplace le <span class="mono">[…]</span>.</p></div>
+      <div class="st"><div class="n">03</div><p><b>Réponds</b> à ses questions. Elle rédige ta section.</p></div>
+    </div>
+
+    <div class="divider"><span>✦ Section 1 sur 7</span></div>
+
+    <!-- PROMPT 1 -->
+    <article class="prompt">
+      <div class="prompt-head">
+        <div>
+          <h2 class="ptitle"><span class="sec">Gratuit</span> La Vision</h2>
+          <p class="pwhen">Le socle : ce que tu fais, pour qui, et pourquoi toi.</p>
+        </div>
+      </div>
+      <div class="codewrap">
+        <button class="copy" type="button">Copier</button>
+        <pre><code>Tu es un consultant en création d'entreprise qui a accompagné des centaines de porteurs
+de projet. Tu vas m'aider à rédiger la section « VISION » de mon business plan.
+
+Règles à respecter absolument :
+1. Ne rédige RIEN pour l'instant.
+2. Pose-moi tes questions UNE PAR UNE, jamais plusieurs à la fois. Attends ma réponse
+   avant la question suivante.
+3. Si une réponse est vague, générique ou creuse (ex : « aider les gens », « un bon produit »),
+   rebondis et fais-moi préciser avec un exemple concret avant de continuer.
+4. Couvre au minimum : le problème réel que je résous, pour qui, et pourquoi MOI
+   (mon histoire, mon avantage injuste, ma légitimité).
+5. Quand tu as assez de matière (environ 5 à 7 questions), dis « J'ai tout ce qu'il me faut »
+   puis rédige la section VISION : un paragraphe d'accroche percutant (2-3 phrases qui
+   donnent envie), puis 3 sous-parties titrées — Le problème / Pour qui / Pourquoi nous.
+   Ton clair, concret, zéro jargon.
+
+Mon projet en une phrase : [DÉCRIS TON PROJET EN 1 PHRASE, MÊME IMPARFAITE]
+
+Commence par ta première question.</code></pre>
+      </div>
+      <p class="pvars">À remplacer : <span class="mono">[DÉCRIS TON PROJET EN 1 PHRASE]</span></p>
+    </article>
+
+    <div class="divider"><span>✦ Section 2 sur 7</span></div>
+
+    <!-- PROMPT 2 -->
+    <article class="prompt">
+      <div class="prompt-head">
+        <div>
+          <h2 class="ptitle"><span class="sec">Gratuit</span> Le Produit / Service</h2>
+          <p class="pwhen">On passe de « l'idée » à « ce que tu vends vraiment ».</p>
+        </div>
+      </div>
+      <div class="codewrap">
+        <button class="copy" type="button">Copier</button>
+        <pre><code>Tu es un consultant en offres et positionnement. Tu vas m'aider à rédiger la section
+« PRODUIT / SERVICE » de mon business plan.
+
+Règles à respecter absolument :
+1. Ne rédige RIEN pour l'instant.
+2. Pose-moi tes questions UNE PAR UNE, et attends ma réponse à chaque fois.
+3. Objectif : rendre mon offre limpide. Si je n'arrive pas à décrire ce que je vends en
+   10 secondes, mon futur client non plus — donc creuse jusqu'à ce que ce soit clair.
+4. Couvre : mon offre principale (quoi exactement), le prix (ou ma fourchette), ce qui me
+   différencie concrètement des autres (pas « la qualité » — quelque chose de vérifiable),
+   et le bénéfice n°1 pour le client.
+5. À la fin, dis « J'ai tout ce qu'il me faut » et rédige la section PRODUIT / SERVICE :
+   une phrase de définition claire (« [Mon produit] est un/une… qui permet à [client] de… »),
+   puis 3 blocs — L'offre / Le prix / Ce qui nous différencie. Termine par une « phrase-pitch »
+   de 12 mots max que je pourrais dire en soirée.
+
+Contexte (ce que j'ai déjà défini en Vision) : [COLLE TA SECTION VISION, OU RÉSUME TON PROJET]
+
+Commence par ta première question.</code></pre>
+      </div>
+      <p class="pvars">À remplacer : <span class="mono">[COLLE TA SECTION VISION OU RÉSUME]</span></p>
+    </article>
+
+    <div class="divider"><span>La suite — version complète 🔒</span></div>
+
+    <!-- LOCKED -->
+    <section class="locked">
+      <h2>Ton business plan complet, en une soirée.</h2>
+      <p class="sub">Les 2 sections ci-dessus t'ont montré la méthode. La version complète débloque les 5 sections restantes + le prompt qui assemble tout — sans page blanche, du début à la fin.</p>
+
+      <div class="lgrid">
+        <div class="lrow"><span class="lk">🔒</span><div><div class="lt">La Cible</div><div class="ld">Un portrait client précis, et où le trouver.</div></div><span class="num">03</span></div>
+        <div class="lrow"><span class="lk">🔒</span><div><div class="lt">Le Modèle économique</div><div class="ld">Vérifie que « ça tient debout » (marge, seuil de rentabilité).</div></div><span class="num">04</span></div>
+        <div class="lrow"><span class="lk">🔒</span><div><div class="lt">La Stratégie d'acquisition</div><div class="ld">Un plan d'action semaine par semaine pour trouver des clients.</div></div><span class="num">05</span></div>
+        <div class="lrow"><span class="lk">🔒</span><div><div class="lt">Les Charges & besoins</div><div class="ld">Tout ce que ça coûte — surtout ce que tu oublies.</div></div><span class="num">06</span></div>
+        <div class="lrow"><span class="lk">🔒</span><div><div class="lt">Les Objectifs</div><div class="ld">Un cap chiffré à 6 / 12 / 24 mois.</div></div><span class="num">07</span></div>
+        <div class="lrow"><span class="lk">🎁</span><div><div class="lt">Le prompt de synthèse</div><div class="ld">Assemble tes 7 sections en un dossier propre + ton pitch de 30 s.</div></div><span class="num">bonus</span></div>
+      </div>
+
+      <p class="sub" style="margin:18px 0 0">Et aussi, dans l'espace Notion : validation de l'idée, roadmap & Gantt, mini-guides juridique/finances, et le Mode Turbo (l'IA écrit directement dans ton Notion).</p>
+
+      <div class="buybox">
+        <div class="price">
+          <span><span class="cur">€</span><span class="big">29</span></span>
+          <span class="was">au lieu de <s>39&nbsp;€</s></span>
+        </div>
+        <a class="cta" href="https://buy.stripe.com/4gM8wReEJcEs2iX1JF3ks00" target="_blank" rel="noopener">Débloquer le Plan de Vol complet&nbsp;→</a>
+        <p class="guar">Accès à vie · dupliqué dans ton Notion · livraison immédiate après paiement</p>
+        <br>
+        <a class="seemore" href="index.html" target="_blank" rel="noopener">Voir la présentation complète du produit →</a>
+      </div>
+    </section>
+
+    <footer>
+      <span class="mono">LE PLAN DE VOL — LA CONSOLE IA DU FREELANCE</span><br>
+      Les 2 sections offertes sont à toi, librement.
+      <span class="sep">·</span> Paiement sécurisé Stripe
+      <span class="sep">·</span> Fabriqué en France 🇫🇷
+    </footer>
+
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var code = btn.parentElement.querySelector('code');
+    var text = code ? code.textContent : '';
+    var done = function(){ btn.textContent='Copié ✓'; btn.classList.add('ok');
+      setTimeout(function(){ btn.textContent='Copier'; btn.classList.remove('ok'); }, 1800); };
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(text); done(); });
+    } else { fallback(text); done(); }
+  });
+});
+function fallback(text){
+  var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
+  document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);
+}
+</script>
+
+</body>
+</html>
