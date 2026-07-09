@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Les 9 erreurs qui plombent un business plan — Le guide offert · Le Plan de Vol</title>
+<meta name="description" content="Les 9 erreurs classiques qui plombent un business plan — et comment les éviter dès la première page. Le guide gratuit du Plan de Vol.">
+<meta name="theme-color" content="#0B1120">
+<style>
+  :root{
+    --bg:#0B1120; --panel:#131D30; --panel-2:#0F1930; --ink:#EAF0F8; --muted:#8A97AD;
+    --accent:#F2A31C; --accent-2:#FFC85C; --line:#25324B; --stub:#0E1626;
+    --glow:rgba(242,163,28,.16); --shadow:0 18px 60px rgba(0,0,0,.55); --focus:#F2A31C;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:var(--accent)}
+  .wrap{width:100%;max-width:760px;margin:0 auto;padding:0 20px}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+
+  .top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:22px 0;flex-wrap:wrap}
+  .brand{display:inline-flex;align-items:center;gap:10px;font-weight:700}
+  .brand .bmark{color:var(--accent);font-size:18px}
+  .back{font-family:ui-monospace,monospace;font-size:12.5px;letter-spacing:.04em;text-decoration:none;
+    color:var(--muted);border:1px solid var(--line);border-radius:9px;padding:8px 12px}
+  .back:hover{border-color:var(--accent);color:var(--ink)}
+
+  header.hero{padding:clamp(26px,6vw,52px) 0 8px}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:ui-monospace,monospace;
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
+    border:1px solid var(--line);border-radius:999px;padding:6px 14px;background:var(--panel)}
+  h1{font-size:clamp(30px,6.4vw,50px);line-height:1.06;margin:.5em 0 .25em;letter-spacing:-.025em;
+    font-weight:800;text-wrap:balance}
+  h1 .amb{color:var(--accent)}
+  .lede{font-size:clamp(16px,2.4vw,19px);color:var(--muted);margin:0;max-width:60ch}
+
+  .intro{background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    padding:clamp(20px,4vw,28px);box-shadow:var(--shadow);margin:30px 0 8px}
+  .intro p{margin:0 0 12px;font-size:16px}
+  .intro p:last-child{margin-bottom:0}
+
+  .err{background:var(--panel);border:1px solid var(--line);border-radius:16px;
+    padding:clamp(20px,4vw,28px);margin:16px 0;box-shadow:var(--shadow)}
+  .err .head{display:flex;gap:15px;align-items:flex-start}
+  .err .num{flex:0 0 auto;width:40px;height:40px;border-radius:11px;display:grid;place-items:center;
+    font-family:ui-monospace,monospace;font-size:17px;font-weight:800;color:var(--accent);
+    background:color-mix(in srgb,var(--accent) 14%,transparent)}
+  .err h2{font-size:clamp(19px,3.2vw,24px);line-height:1.2;margin:2px 0 0;letter-spacing:-.015em;font-weight:800}
+  .err .row{margin:16px 0 0}
+  .err .lbl{font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);display:block;margin-bottom:3px}
+  .err .lbl.fix{color:var(--accent)}
+  .err p{margin:0;font-size:15.5px}
+  .err .row + .row{border-top:1px solid var(--line);padding-top:14px}
+
+  .cta-band{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 12%,var(--panel)),var(--panel));
+    border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));border-radius:18px;
+    padding:clamp(24px,5vw,34px);margin:34px 0 10px;text-align:center;box-shadow:var(--shadow)}
+  .cta-band h2{font-size:clamp(22px,4vw,30px);margin:0 0 10px;letter-spacing:-.02em;font-weight:800;text-wrap:balance}
+  .cta-band p{color:var(--muted);margin:0 auto 22px;max-width:52ch;font-size:15.5px}
+  .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+  .cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;
+    background:var(--accent);color:#0B1120;font-size:16px;font-weight:700;padding:15px 24px;border-radius:12px;
+    box-shadow:0 8px 22px var(--glow);transition:transform .12s ease,filter .12s ease}
+  .cta:hover{filter:brightness(1.06);transform:translateY(-1px)}
+  .cta.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--line);box-shadow:none}
+  .cta.ghost:hover{border-color:var(--accent)}
+
+  footer{border-top:1px solid var(--line);padding:28px 0 46px;color:var(--muted);
+    font-size:12.5px;line-height:1.8;text-align:center;margin-top:20px}
+  footer .mono{letter-spacing:.04em}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <span class="brand"><span class="bmark">✈</span>Le Plan de Vol</span>
+      <a class="back" href="index.html">← Retour au site</a>
+    </div>
+
+    <header class="hero">
+      <span class="eyebrow">🎁 Le guide offert</span>
+      <h1>Les <span class="amb">9 erreurs</span> qui plombent un business plan.</h1>
+      <p class="lede">Et comment les éviter dès la première page. Corrige-les, et tu as déjà un plan meilleur que 90 % de ceux qui traînent.</p>
+    </header>
+
+    <div class="intro">
+      <p>Un business plan, ce n'est pas un document à rendre. C'est l'outil qui te dit <strong>si ton projet tient debout</strong> — et dans quel ordre le lancer.</p>
+      <p>Pourtant, 9 fois sur 10, il finit vide, faux, ou oublié dans un dossier. Voici les 9 erreurs qu'on voit revenir tout le temps.</p>
+    </div>
+
+    <article class="err">
+      <div class="head"><span class="num">1</span><h2>Commencer par le document au lieu du projet</h2></div>
+      <div class="row"><span class="lbl">Le piège</span><p>Tu ouvres un modèle vide, tu vois quarante cases, tu te décourages. La page blanche gagne.</p></div>
+      <div class="row"><span class="lbl">Pourquoi ça plombe</span><p>Tu confonds <em>mettre en forme</em> et <em>réfléchir</em>. Le formatage te bloque avant même d'avoir pensé.</p></div>
+      <div class="row"><span class="lbl fix">Comment l'éviter</span><p>Réponds d'abord à des questions simples, une par une. La mise en forme vient après, toute seule — c'est le principe du Plan de Vol.</p></div>
+    </article>
+
+    <article class="err">
+      <div class="head"><span class="num">2</span><h2>Écrire pour un banquier imaginaire</h2></div>
+      <div class="row"><span class="lbl">Le piège</span><p>Tu rédiges en jargon, gonflé, « pro », pour impressionner quelqu'un qui ne le lira peut-être jamais.</p></div>
+      <div class="row"><span class="lbl">Pourquoi ça plombe</span><p>Un plan écrit pour séduire ne t'aide pas à <em>décider</em>. Tu te mens à toi-même en beau français.</p></div>
+      <div class="row"><span class="lbl fix">Comment l'éviter</span><p>Écris d'abord pour toi. Un plan clair que tu comprends convainc mieux qu'un plan pompeux — tu pourras le « cravater » ensuite.</p></div>
+    </article>
+
+    <article class="err">
+      <div class="head"><span class="num">3</span><h2>Des prévisions financières au doigt mouillé</h2></div>
+      <div class="row"><span class="lbl">Le piège</span><p>La fameuse courbe qui explose au mois 6 « parce que ça va marcher ». Zéro hypothèse derrière.</p></div>
+      <div class="row"><span class="lbl">Pourquoi ça plombe</span><p>Des chiffres sans hypothèse, ce n'est pas une prévision, c'est un vœu. Personne n'y croit — toi non plus, au fond.</p></div>
+      <div class="row"><span class="lbl fix">Comment l'éviter</span><p>Pars de 2-3 hypothèses assumées (prix, clients/mois, taux de transformation) et déroule. Un chiffre modeste et argumenté vaut mille chiffres magiques.</p></div>
+    </article>
+
+    <article class="err">
+      <div class="head"><span class="num">4</span><h2>Ne jamais valider la demande</h2></div>
+      <div class="row"><span class="lbl">Le piège</span><p>Tu construis tout un plan sur l'idée que « les gens vont adorer », sans qu'un seul vrai client l'ait confirmé.</p></div>
+      <div class="row"><span class="lbl">Pourquoi ça plombe</span><p>C'est l'erreur n°1 des projets qui échouent — construire quelque chose que personne ne veut acheter.</p></div>
+      <div class="row"><span class="lbl fix">Comment l'éviter</span><p>Va chercher 5 preuves de demande : 5 personnes de ta cible qui disent « oui, ça m'intéresse, voilà pourquoi ». Une pré-commande vaut dix compliments.</p></div>
+    </article>
+
+    <article class="err">
+      <div class="head"><span class="num">5</span><h2>Une cible « tout le monde »</h2></div>
+      <div class="row"><span class="lbl">Le piège</span><p>« Mon produit s'adresse à tous ceux qui… ». Donc à personne en particulier.</p></div>
+      <div class="row"><span class="lbl">Pourquoi ça plombe</span><p>Si tu parles à tout le monde, ton message ne touche personne, et ton acquisition coûte une fortune.</p></div>
+      <div class="row"><span class="lbl fix">Comment l'éviter</span><p>Décris <em>une</em> personne précise : son problème, son quotidien, ses mots. Tu élargiras plus tard — on ne démarre jamais large.</p></div>
+    </article>
+
+    <article class="err">
+      <div class="head"><span class="num">6</span><h2>Confondre l'idée et le modèle économique</h2></div>
+      <div class="row"><span class="lbl">Le piège</span><p>Tu sais <em>ce que tu fais</em>, mais pas vraiment <em>comment ça gagne de l'argent</em>.</p></div>
+      <div class="row"><span class="lbl">Pourquoi ça plombe</span><p>Une bonne idée sans modèle, c'est un hobby coûteux. Le « comment tu encaisses » est aussi important que le « quoi ».</p></div>
+      <div class="row"><span class="lbl fix">Comment l'éviter</span><p>Écris noir sur blanc : qui paie, combien, à quelle fréquence, pour quoi exactement. Choisis un modèle, ne reste pas flou.</p></div>
+    </article>
+
+    <article class="err">
+      <div class="head"><span class="num">7</span><h2>Oublier comment on trouve les clients</h2></div>
+      <div class="row"><span class="lbl">Le piège</span><p>Le plan décrit le produit en détail… et zéro ligne sur comment les gens vont te découvrir.</p></div>
+      <div class="row"><span class="lbl">Pourquoi ça plombe</span><p>Le meilleur produit invisible ne se vend pas. L'acquisition n'est pas un « détail marketing », c'est vital.</p></div>
+      <div class="row"><span class="lbl fix">Comment l'éviter</span><p>Choisis 1 ou 2 canaux réalistes et estime ce qu'il faut faire chaque semaine. Mieux vaut un canal creusé que dix survolés.</p></div>
+    </article>
+
+    <article class="err">
+      <div class="head"><span class="num">8</span><h2>Sous-estimer les charges et la trésorerie</h2></div>
+      <div class="row"><span class="lbl">Le piège</span><p>Tu comptes les rentrées, tu oublies les sorties — et surtout le trou de trésorerie du début.</p></div>
+      <div class="row"><span class="lbl">Pourquoi ça plombe</span><p>Beaucoup de projets rentables sur le papier meurent d'un simple manque de cash au mauvais moment.</p></div>
+      <div class="row"><span class="lbl fix">Comment l'éviter</span><p>Liste toutes tes charges, calcule ton seuil de rentabilité, et garde une réserve. Provisionne toujours une marge de sécurité.</p></div>
+    </article>
+
+    <article class="err">
+      <div class="head"><span class="num">9</span><h2>Un plan figé qu'on ne rouvre jamais</h2></div>
+      <div class="row"><span class="lbl">Le piège</span><p>Tu finis le document, tu es fier·e… et tu ne le regardes plus jamais.</p></div>
+      <div class="row"><span class="lbl">Pourquoi ça plombe</span><p>Un business plan mort ne pilote rien. La réalité change, ton plan doit changer avec.</p></div>
+      <div class="row"><span class="lbl fix">Comment l'éviter</span><p>Transforme-le en feuille de route avec des jalons chiffrés, revue chaque mois. Un plan, ça se pilote comme un tableau de bord.</p></div>
+    </article>
+
+    <div class="cta-band">
+      <h2>Envie de le faire pour de vrai — ce soir&nbsp;?</h2>
+      <p>Le Plan de Vol te fait produire tout ça : un copilote t'interroge section par section, teste la viabilité de ton idée et la transforme en feuille de route de lancement. En une soirée, pas en trois mois.</p>
+      <div class="cta-row">
+        <a class="cta" href="index.html">Découvrir Le Plan de Vol&nbsp;→</a>
+        <a class="cta ghost" href="gratuit.html">Tester 2 sections gratuitement</a>
+      </div>
+    </div>
+
+    <footer>
+      <span class="mono">LE PLAN DE VOL — LA CONSOLE IA DU FREELANCE</span><br>
+      Guide offert · Licence personnelle — revente et redistribution interdites.
+    </footer>
+  </div>
+</body>
+</html>

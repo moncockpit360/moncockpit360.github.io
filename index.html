@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Le Plan de Vol — ton business plan écrit avec l'IA, validé et prêt à lancer</title>
-<meta name="description" content="Un espace Notion où l'IA t'interviewe puis rédige chaque section. Ton business plan complet en une soirée — validé (analyse de viabilité) et transformé en feuille de route de lancement. 70 € au lieu de 140 € (−50 %, offre de lancement).">
+<title>Le Plan de Vol — ton business plan clair, validé et prêt à lancer, en une soirée</title>
+<meta name="description" content="Un espace Notion où un copilote te pose les bonnes questions, une par une, puis rédige chaque section à ta place. Ton business plan complet en une soirée — validé (analyse de viabilité) et transformé en feuille de route de lancement. 70 € au lieu de 140 € (−50 %, offre de lancement).">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Le Plan de Vol — ton business plan écrit avec l'IA, validé et prêt à lancer">
-<meta property="og:description" content="L'IA t'interviewe puis rédige chaque section. Business plan complet en une soirée — validé et transformé en plan de lancement. 70 € au lieu de 140 € (−50 %, offre de lancement).">
+<meta property="og:title" content="Le Plan de Vol — ton business plan clair, validé et prêt à lancer, en une soirée">
+<meta property="og:description" content="Un copilote t'interroge, tu réponds, chaque section se rédige. Business plan complet en une soirée — validé et transformé en plan de lancement. 70 € au lieu de 140 € (−50 %, offre de lancement).">
 <meta name="theme-color" content="#0B1120">
 <style>html,body{margin:0;padding:0}*{box-sizing:border-box}</style>
 </head>
 <body>
-<title>Le Plan de Vol — ton business plan écrit avec l'IA, validé et prêt à lancer</title>
+<title>Le Plan de Vol — ton business plan clair, validé et prêt à lancer, en une soirée</title>
 <style>
   /* DA cockpit — thème sombre unique (bleu-nuit + ambre), comme les autres visuels de la marque */
   :root,
@@ -257,28 +257,144 @@
   /* reveal */
   .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
   .rv.in{opacity:1;transform:none}
+
+  /* ===== BANDEROLE DÉFILANTE (announcement bar) ===== */
+  .ticker{display:block;text-decoration:none;overflow:hidden;white-space:nowrap;
+    background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#0B1120;
+    border-bottom:1px solid rgba(0,0,0,.25);position:relative;z-index:20}
+  .ticker-track{display:inline-flex;align-items:center;
+    animation:ticker 26s linear infinite;will-change:transform}
+  .ticker:hover .ticker-track{animation-play-state:paused}
+  .ticker-group{display:inline-flex;align-items:center;flex:0 0 auto}
+  .ticker-group span{display:inline-flex;align-items:center;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:700;
+    font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:9px 0}
+  .ticker-group span::after{content:"✈";margin:0 22px;opacity:.55;font-size:11px}
+  @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  @media(max-width:480px){.ticker-group span{font-size:11px}.ticker-track{animation-duration:20s}}
+
+  /* ===== POP-UP CAPTURE EMAIL ===== */
+  .lm-overlay{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;
+    padding:20px;background:rgba(6,10,20,.72);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+  .lm-overlay.show{display:flex;animation:lmfade .28s ease both}
+  @keyframes lmfade{from{opacity:0}to{opacity:1}}
+  .lm-modal{position:relative;width:100%;max-width:440px;background:var(--panel);color:var(--ink);
+    border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));border-radius:18px;
+    box-shadow:var(--shadow);padding:clamp(24px,5vw,34px);
+    animation:lmpop .34s cubic-bezier(.16,1,.3,1) both}
+  @keyframes lmpop{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+  .lm-close{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:9px;border:1px solid var(--line);
+    background:var(--panel-2);color:var(--muted);font-size:18px;line-height:1;cursor:pointer;
+    display:grid;place-items:center;transition:color .14s ease,border-color .14s ease}
+  .lm-close:hover{color:var(--ink);border-color:var(--accent)}
+  .lm-close:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+  .lm-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:ui-monospace,monospace;
+    font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
+    border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--panel-2)}
+  .lm-modal h3{font-size:clamp(21px,4.5vw,26px);line-height:1.14;margin:16px 0 8px;
+    letter-spacing:-.02em;font-weight:800;text-wrap:balance}
+  .lm-modal h3 .amb{color:var(--accent)}
+  .lm-modal .lm-sub{color:var(--muted);font-size:14.5px;margin:0 0 18px;line-height:1.55}
+  .lm-form{display:flex;flex-direction:column;gap:10px}
+  .lm-form input[type=email]{width:100%;font-size:15.5px;padding:14px 15px;border-radius:11px;
+    border:1px solid var(--line);background:var(--panel-2);color:var(--ink);outline:none}
+  .lm-form input[type=email]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
+  .lm-form button{width:100%;border:0;cursor:pointer;background:var(--accent);color:#0B1120;
+    font-size:16px;font-weight:700;padding:15px 18px;border-radius:11px;
+    box-shadow:0 8px 22px var(--glow);transition:transform .12s ease,filter .12s ease}
+  .lm-form button:hover{filter:brightness(1.06);transform:translateY(-1px)}
+  .lm-form button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+  .lm-fine{font-size:11.5px;color:var(--muted);margin:12px 0 0;text-align:center;line-height:1.5}
+  .lm-fine a{color:var(--accent)}
+  .lm-success{display:none;text-align:center}
+  .lm-success .big{font-size:40px;line-height:1}
+  .lm-success h3{margin:12px 0 8px}
+  .lm-modal.done .lm-form,.lm-modal.done .lm-eyebrow,.lm-modal.done>h3,.lm-modal.done>.lm-sub,.lm-modal.done .lm-fine{display:none}
+  .lm-modal.done .lm-success{display:block}
+
+  /* ===== CAPTURE EMAIL INLINE ===== */
+  .capture{background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 10%,var(--panel)),var(--panel));
+    border:1px solid color-mix(in srgb,var(--accent) 38%,var(--line));border-radius:18px;
+    padding:clamp(22px,4vw,32px);display:grid;gap:20px;box-shadow:var(--shadow)}
+  @media(min-width:720px){.capture{grid-template-columns:1.1fr .9fr;align-items:center;gap:30px}}
+  .capture .kick{margin-bottom:8px}
+  .capture h3{font-size:clamp(19px,3vw,25px);line-height:1.16;margin:0 0 8px;letter-spacing:-.015em;font-weight:800;text-wrap:balance}
+  .capture h3 .amb{color:var(--accent)}
+  .capture .ctxt{color:var(--muted);font-size:14.5px;margin:0}
+  .cap-form{display:flex;flex-direction:column;gap:10px}
+  .cap-form input[type=email]{width:100%;font-size:15.5px;padding:14px 15px;border-radius:11px;
+    border:1px solid var(--line);background:var(--panel-2);color:var(--ink);outline:none}
+  .cap-form input[type=email]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
+  .cap-form button{width:100%;border:0;cursor:pointer;background:var(--accent);color:#0B1120;
+    font-size:15.5px;font-weight:700;padding:14px 18px;border-radius:11px;
+    box-shadow:0 8px 22px var(--glow);transition:transform .12s ease,filter .12s ease}
+  .cap-form button:hover{filter:brightness(1.06);transform:translateY(-1px)}
+  .cap-form button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+  .cap-note{font-size:11.5px;color:var(--muted);margin:2px 0 0}
+  .cap-done{display:none;background:var(--panel-2);border:1px solid color-mix(in srgb,var(--accent) 40%,var(--line));
+    border-radius:12px;padding:16px 18px}
+  .cap-done b{display:block;margin-bottom:6px}
+  .cap-done a{color:var(--accent);font-weight:700}
+  .capture.done .cap-form,.capture.done .cap-note{display:none}
+  .capture.done .cap-done{display:block}
+
+  /* ===== FONDATEUR ===== */
+  .founder{background:var(--panel);border:1px solid var(--line);border-radius:18px;
+    padding:clamp(24px,5vw,38px);box-shadow:var(--shadow)}
+  .founder p{font-size:16px;margin:0 0 15px}
+  .founder p:last-of-type{margin-bottom:0}
+  .founder .sig{display:flex;align-items:center;gap:13px;margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
+  .founder .sig .av{width:46px;height:46px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;
+    background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent);font-size:20px}
+  .founder .sig .who b{display:block;letter-spacing:-.01em}
+  .founder .sig .who span{color:var(--muted);font-size:13px}
+
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
     .rv{opacity:1;transform:none}
     .wp .mk{border-color:var(--accent);color:var(--accent)}
     .wp .arr{opacity:1}
+    .ticker-track{animation:none;transform:none}
+    .ticker{white-space:normal;text-align:center}
+    .ticker-group:nth-child(2){display:none}
   }
 </style>
 
 <div class="page">
+
+  <!-- BANDEROLE DÉFILANTE -->
+  <a class="ticker" href="#offre" aria-label="Offre de lancement — voir l'offre">
+    <span class="ticker-track">
+      <span class="ticker-group" aria-hidden="false">
+        <span>Offre de lancement −50 %</span>
+        <span>Le Plan de Vol · 70 € au lieu de 140 €</span>
+        <span>Ton business plan complet en une soirée</span>
+        <span>Essaie 2 sections gratuitement</span>
+        <span>Accès à vie · dupliquable dans ton Notion</span>
+      </span>
+      <span class="ticker-group" aria-hidden="true">
+        <span>Offre de lancement −50 %</span>
+        <span>Le Plan de Vol · 70 € au lieu de 140 €</span>
+        <span>Ton business plan complet en une soirée</span>
+        <span>Essaie 2 sections gratuitement</span>
+        <span>Accès à vie · dupliquable dans ton Notion</span>
+      </span>
+    </span>
+  </a>
+
   <div class="wrap">
 
     <!-- HERO -->
     <header class="hero">
       <div class="hero-top">
         <span class="brand"><span class="bmark">✈</span>Le Plan de Vol<span class="bsub">·&nbsp;Cockpit&nbsp;360</span></span>
-        <span class="eyebrow"><span class="dot"></span>Méthode guidée par l'IA</span>
+        <span class="eyebrow"><span class="dot"></span>La méthode anti-page blanche</span>
       </div>
 
       <div style="display:flex;gap:clamp(16px,4vw,32px);align-items:center;margin-top:clamp(22px,5vw,40px);flex-wrap:wrap-reverse">
         <div style="flex:1 1 300px;min-width:0">
-          <h1>Ton business plan, écrit <span class="amb">avec l'IA</span>.<br>En une soirée, pas en trois mois.</h1>
-          <p class="lede">Un espace Notion où chaque section te pose les bonnes questions — puis rédige le texte à ta place. Puis on <strong>teste sa viabilité</strong> et on le transforme en <strong>feuille de route de lancement</strong>. Fini la page blanche.</p>
+          <h1>Ton business plan, clair et <span class="amb">prêt à lancer</span>.<br>En une soirée, pas en trois mois.</h1>
+          <p class="lede">Un copilote te pose les bonnes questions, une par une — puis rédige chaque section à ta place. On <strong>teste ensuite sa viabilité</strong> et on le transforme en <strong>feuille de route de lancement</strong>. Fini la page blanche.</p>
         </div>
         <div class="gauge" role="img" aria-label="Indicateur de cap — prêt au décollage">
           <div class="ring"></div>
@@ -317,13 +433,32 @@
     <!-- METHOD -->
     <section class="rv">
       <p class="kick">Le renversement</p>
-      <h2>On a inversé le problème : l'IA t'interviewe, puis rédige.</h2>
-      <p class="sub">Ce n'est <b>pas</b> un template Notion de plus (ça, tu le trouves gratuit partout, et il reste vide). Ici, chaque section contient un <b>prompt-interview</b> : l'IA te pose <b>une question à la fois</b>, comme un consultant. Tu réponds avec tes mots. Elle rédige la section, propre. Tu passes à la suivante.</p>
+      <h2>On a inversé le problème : ton copilote t'interviewe, puis rédige.</h2>
+      <p class="sub">Ce n'est <b>pas</b> un template Notion de plus (ça, tu le trouves gratuit partout, et il reste vide). Ici, chaque section contient un <b>prompt-interview</b> : un copilote te pose <b>une question à la fois</b>, comme un consultant. Tu réponds avec tes mots. Il rédige la section, propre. Tu passes à la suivante.</p>
       <ol class="steps">
         <li><span class="num">1</span><div><b>Copie le prompt de la section</b><span>Il est déjà écrit, dans la page Notion. Colle-le dans ChatGPT ou Claude.</span></div></li>
         <li><span class="num">2</span><div><b>Réponds aux questions, une par une</b><span>Pas de page blanche : l'IA te guide. Tu parles de ton projet, elle structure.</span></div></li>
         <li><span class="num">3</span><div><b>Elle rédige, tu colles</b><span>La section est écrite dans un français clair et pro. Tu la relis, tu ajustes, tu avances.</span></div></li>
       </ol>
+    </section>
+
+    <!-- CAPTURE INLINE #1 -->
+    <section class="rv">
+      <div class="capture">
+        <div>
+          <p class="kick">Guide offert</p>
+          <h3>Les <span class="amb">9 erreurs</span> qui plombent un business plan.</h3>
+          <p class="ctxt">Les pièges classiques — et comment les éviter dès la première page. Reçois le guide gratuitement, tu le lis en 5 minutes.</p>
+        </div>
+        <div>
+          <form class="cap-form" action="__BREVO_FORM_ACTION__" method="POST" target="lm-sink" novalidate>
+            <input type="email" name="EMAIL" placeholder="ton@email.com" autocomplete="email" required>
+            <button type="submit">Recevoir le guide gratuit&nbsp;→</button>
+          </form>
+          <p class="cap-note">Zéro spam · désinscription en un clic</p>
+          <div class="cap-done"><b>✅ C'est à toi&nbsp;!</b><a href="guide.html" target="_blank" rel="noopener">Ouvrir le guide « 9 erreurs »&nbsp;→</a></div>
+        </div>
+      </div>
     </section>
 
     <!-- ROUTE : 7 waypoints -->
@@ -374,6 +509,21 @@
           <span class="tag">Mode Turbo</span>
           <h3>Écriture directe</h3>
           <p><span class="ok">Avec un Claude payant connecté à Notion</span>, l'IA écrit dans tes pages et remplit ton Gantt toute seule. Le confort maximal — mais jamais obligatoire.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FONDATEUR -->
+    <section class="rv">
+      <p class="kick">Pourquoi j'ai créé Le Plan de Vol</p>
+      <h2>Parce que la page blanche, je l'ai détestée aussi.</h2>
+      <div class="founder">
+        <p>J'ai monté plusieurs entreprises. À chaque fois, le même mur : le business plan. Un document intimidant, des dizaines de questions, du jargon — et l'impression qu'il faut être expert-comptable pour poser sa propre idée sur le papier. Résultat : on repousse, on improvise, et on lance à l'aveugle.</p>
+        <p>Un jour, j'ai inversé le problème. Au lieu de fixer une page vide, j'ai laissé un copilote me <strong>poser les bonnes questions</strong>, une par une, et rédiger à ma place. En une soirée, j'avais un plan clair, chiffré, et — pour la première fois — <strong>honnête</strong>. C'est cet outil que j'ai eu envie de donner à d'autres.</p>
+        <p>Le Plan de Vol, ce n'est pas un énième template vide. C'est la méthode que j'aurais aimé avoir quand j'ai commencé : simple, guidée, faite pour <strong>décider et lancer</strong> — pas pour impressionner un jury.</p>
+        <div class="sig">
+          <span class="av">✈</span>
+          <div class="who"><b>[Ton prénom]</b><span>Fondatrice · Le Plan de Vol — Cockpit 360</span></div>
         </div>
       </div>
     </section>
@@ -449,11 +599,30 @@
       </div>
     </section>
 
+    <!-- CAPTURE INLINE #2 -->
+    <section class="rv">
+      <div class="capture">
+        <div>
+          <p class="kick">Pas encore décidé·e ?</p>
+          <h3>Repars au moins avec le <span class="amb">guide gratuit</span>.</h3>
+          <p class="ctxt">Les 9 erreurs qui plombent un business plan — même si tu n'achètes rien aujourd'hui, tu éviteras les pièges les plus coûteux.</p>
+        </div>
+        <div>
+          <form class="cap-form" action="__BREVO_FORM_ACTION__" method="POST" target="lm-sink" novalidate>
+            <input type="email" name="EMAIL" placeholder="ton@email.com" autocomplete="email" required>
+            <button type="submit">Envoie-moi le guide&nbsp;→</button>
+          </form>
+          <p class="cap-note">Zéro spam · désinscription en un clic</p>
+          <div class="cap-done"><b>✅ C'est à toi&nbsp;!</b><a href="guide.html" target="_blank" rel="noopener">Ouvrir le guide « 9 erreurs »&nbsp;→</a></div>
+        </div>
+      </div>
+    </section>
+
     <!-- FINAL -->
     <section class="final rv">
       <p class="kick" style="justify-content:center">Prêt·e au décollage</p>
       <h2>Ton projet mérite mieux qu'une note vocale et trois idées en tête.</h2>
-      <p class="sub" style="margin:0 auto">Pose-le noir sur blanc ce soir. Avec l'IA comme copilote.</p>
+      <p class="sub" style="margin:0 auto">Pose-le noir sur blanc ce soir. Un copilote t'accompagne, question après question.</p>
       <a class="cta" href="https://buy.stripe.com/aFa8wR8gl7k86zd1JF3ks05" target="_blank" rel="noopener">Obtenir Le Plan de Vol — 70&nbsp;€&nbsp;→</a>
       <p class="price-hint" style="justify-content:center">Accès à vie · dupliquable dans ton Notion · marche avec ChatGPT ou Claude gratuit</p>
     </section>
@@ -511,6 +680,122 @@
     });
   }
   tick(); setInterval(tick, 1000);
+})();
+</script>
+
+<!-- ===== POP-UP CAPTURE EMAIL — lead magnet « 9 erreurs » ===== -->
+<div class="lm-overlay" id="lmOverlay" role="dialog" aria-modal="true" aria-labelledby="lmTitle" aria-hidden="true">
+  <div class="lm-modal" id="lmModal">
+    <button class="lm-close" id="lmClose" type="button" aria-label="Fermer">✕</button>
+    <span class="lm-eyebrow">🎁 Guide offert</span>
+    <h3 id="lmTitle">Les <span class="amb">9 erreurs</span> qui plombent un business plan.</h3>
+    <p class="lm-sub">Et surtout : comment les éviter dès la première page. Reçois le guide gratuit par email — plus un accès aux 2 premières sections du Plan de Vol.</p>
+
+    <!-- Le formulaire poste vers Brevo sans quitter la page (iframe cachée).
+         ⚠️ À BRANCHER : remplace __BREVO_FORM_ACTION__ par l'URL du formulaire Brevo
+         (Brevo → Contacts → Formulaires → « Partager » → action du <form>, type https://xxxxx.sibforms.com/serve/...).
+         Le champ email s'appelle EMAIL (nom standard Brevo). -->
+    <form class="lm-form" id="lmForm" action="__BREVO_FORM_ACTION__" method="POST" target="lm-sink" novalidate>
+      <input type="email" name="EMAIL" id="lmEmail" placeholder="ton@email.com" autocomplete="email" required>
+      <button type="submit">Recevoir le guide gratuit&nbsp;→</button>
+    </form>
+    <p class="lm-fine">Zéro spam. Désinscription en un clic. Tu recevras aussi les nouveautés du Plan de Vol.</p>
+
+    <div class="lm-success" id="lmSuccess">
+      <div class="big">🎉</div>
+      <h3>Ton guide est prêt&nbsp;!</h3>
+      <p class="lm-sub" style="margin-bottom:16px">Clique pour l'ouvrir tout de suite. On t'enverra aussi les prochaines nouveautés du Plan de Vol par email.</p>
+      <a class="cta" href="guide.html" target="_blank" rel="noopener" style="width:100%">Ouvrir le guide « 9 erreurs »&nbsp;→</a>
+    </div>
+  </div>
+</div>
+<iframe name="lm-sink" title="sink" style="display:none" aria-hidden="true"></iframe>
+
+<script>
+/* Pop-up lead magnet : déclenché au scroll (45%) OU à l'intention de sortie OU après 30 s.
+   Affiché une seule fois ; masqué durablement après fermeture ou envoi (localStorage). */
+(function(){
+  var overlay = document.getElementById('lmOverlay');
+  if(!overlay) return;
+  var modal   = document.getElementById('lmModal');
+  var form    = document.getElementById('lmForm');
+  var email   = document.getElementById('lmEmail');
+  var closeB  = document.getElementById('lmClose');
+  var KEY = 'pdv_lm_seen_v1';
+  var shown = false, done = false;
+  var lastFocus = null;
+
+  function seen(){ try{ return localStorage.getItem(KEY)==='1'; }catch(e){ return false; } }
+  function markSeen(){ try{ localStorage.setItem(KEY,'1'); }catch(e){} }
+
+  function open(){
+    if(shown || seen()) return;
+    shown = true;
+    lastFocus = document.activeElement;
+    overlay.classList.add('show');
+    overlay.setAttribute('aria-hidden','false');
+    setTimeout(function(){ try{ email.focus(); }catch(e){} }, 60);
+  }
+  function close(){
+    overlay.classList.remove('show');
+    overlay.setAttribute('aria-hidden','true');
+    if(!done) markSeen(); // pas revu au prochain passage
+    if(lastFocus && lastFocus.focus){ try{ lastFocus.focus(); }catch(e){} }
+    cleanup();
+  }
+  function cleanup(){
+    window.removeEventListener('scroll', onScroll);
+    document.removeEventListener('mouseout', onExit);
+    clearTimeout(timer);
+  }
+
+  // Déclencheurs
+  function onScroll(){
+    var h = document.documentElement;
+    var p = (h.scrollTop||document.body.scrollTop) / ((h.scrollHeight||document.body.scrollHeight) - h.clientHeight);
+    if(p > 0.45) open();
+  }
+  function onExit(e){
+    if(!e.relatedTarget && e.clientY <= 0) open();
+  }
+  var timer = setTimeout(open, 30000);
+  window.addEventListener('scroll', onScroll, {passive:true});
+  document.addEventListener('mouseout', onExit);
+
+  // Fermeture
+  closeB.addEventListener('click', close);
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) close(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && overlay.classList.contains('show')) close(); });
+
+  // Soumission
+  form.addEventListener('submit', function(e){
+    var val = (email.value||'').trim();
+    var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+    if(!ok){ e.preventDefault(); email.focus(); email.style.borderColor='#e5484d'; return; }
+    // Si Brevo n'est pas encore branché, on n'envoie rien mais on affiche le remerciement.
+    if(form.getAttribute('action').indexOf('__BREVO') === 0){ e.preventDefault(); }
+    done = true; markSeen();
+    modal.classList.add('done');
+    // (si branché à Brevo, la requête part dans l'iframe cachée en parallèle)
+  });
+})();
+</script>
+
+<script>
+/* Formulaires de capture inline (.cap-form) — même logique : validation + merci en place */
+(function(){
+  var forms = document.querySelectorAll('.cap-form');
+  forms.forEach(function(form){
+    var email = form.querySelector('input[type=email]');
+    form.addEventListener('submit', function(e){
+      var val = (email.value||'').trim();
+      var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val);
+      if(!ok){ e.preventDefault(); email.focus(); email.style.borderColor='#e5484d'; return; }
+      if(form.getAttribute('action').indexOf('__BREVO') === 0){ e.preventDefault(); }
+      var box = form.closest('.capture');
+      if(box) box.classList.add('done');
+    });
+  });
 })();
 </script>
 
