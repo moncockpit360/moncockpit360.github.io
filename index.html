@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Le Plan de Vol — ton business plan écrit avec l'IA</title>
-<meta name="description" content="Un espace Notion où chaque section te pose les bonnes questions puis rédige le texte à ta place. Ton business plan complet en une soirée, avec l'IA. 69 € au lieu de 120 € (−50 %).">
+<meta name="description" content="Un espace Notion où chaque section te pose les bonnes questions puis rédige le texte à ta place. Ton business plan complet en une soirée, avec l'IA. 70 € au lieu de 140 € (−50 %, offre de lancement).">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Le Plan de Vol — ton business plan écrit avec l'IA">
-<meta property="og:description" content="Chaque section t'interviewe puis rédige à ta place. Ton business plan complet en une soirée. 69 € au lieu de 120 € (−50 %).">
+<meta property="og:description" content="Chaque section t'interviewe puis rédige à ta place. Ton business plan complet en une soirée. 70 € au lieu de 140 € (−50 %, offre de lancement).">
 <meta name="theme-color" content="#0B1120">
 <style>html,body{margin:0;padding:0}*{box-sizing:border-box}</style>
 </head>
@@ -88,6 +88,17 @@
   .cta.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--line);box-shadow:none}
   .cta.ghost:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent);filter:none}
   .price-hint{font-size:13.5px;color:var(--muted);margin:14px 0 0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+
+  /* countdown offre de lancement */
+  .countdown{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:16px 0 0;
+    border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line));border-radius:12px;
+    padding:11px 16px;background:color-mix(in srgb,var(--accent) 9%,var(--panel))}
+  .countdown .cd-label{font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--accent);font-weight:600}
+  .countdown .cd-clock{margin-left:auto;font-family:ui-monospace,monospace;font-weight:800;
+    font-size:19px;letter-spacing:.04em;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .countdown .cd-clock .u{color:var(--muted);font-weight:400;font-size:12px;margin:0 4px 0 1px}
+  @media(max-width:480px){.countdown .cd-clock{margin-left:0}}
   .strike{text-decoration:line-through;opacity:.7}
 
   /* instrument readout strip */
@@ -281,7 +292,12 @@
         <a class="cta" href="https://buy.stripe.com/4gM8wReEJcEs2iX1JF3ks00" target="_blank" rel="noopener">Obtenir Le Plan de Vol&nbsp;→</a>
         <a class="cta ghost" href="gratuit.html" target="_blank" rel="noopener">Essayer 2 sections gratuitement</a>
       </div>
-      <p class="price-hint"><span class="strike">120&nbsp;€</span> <b style="color:var(--ink)">69&nbsp;€</b> <b style="color:var(--accent)">−50&nbsp;%</b> · accès à vie · dupliquable dans ton Notion · marche avec ChatGPT ou Claude gratuit</p>
+      <p class="price-hint"><span class="strike">140&nbsp;€</span> <b style="color:var(--ink)">70&nbsp;€</b> <b style="color:var(--accent)">−50&nbsp;%</b> · accès à vie · dupliquable dans ton Notion · marche avec ChatGPT ou Claude gratuit</p>
+
+      <div class="countdown" role="timer">
+        <span class="cd-label">⏳ Offre de lancement −50 % · fin ce soir à minuit</span>
+        <span class="cd-clock"><span class="cdH">00</span><span class="u">h</span><span class="cdM">00</span><span class="u">m</span><span class="cdS">00</span><span class="u">s</span></span>
+      </div>
 
       <div class="readout" aria-label="Repères produit">
         <div><div class="n">7</div><div class="l">sections guidées</div></div>
@@ -369,9 +385,13 @@
           <div class="offer-label"><span>Carte d'embarquement</span><span class="plane">✈</span></div>
           <h2>Le Plan de Vol</h2>
           <p class="sub" style="margin-top:6px">L'espace complet : les 7 sections guidées, la synthèse, la validation, la roadmap et les fondations.</p>
+          <div class="countdown" role="timer" style="margin:14px 0 2px">
+            <span class="cd-label">⏳ Offre de lancement −50 % · fin ce soir à minuit</span>
+            <span class="cd-clock"><span class="cdH">00</span><span class="u">h</span><span class="cdM">00</span><span class="u">m</span><span class="cdS">00</span><span class="u">s</span></span>
+          </div>
           <div class="priceline">
-            <span><span class="cur">€</span><span class="big">69</span></span>
-            <span class="was">au lieu de <s>120&nbsp;€</s></span>
+            <span><span class="cur">€</span><span class="big">70</span></span>
+            <span class="was">au lieu de <s>140&nbsp;€</s></span>
             <span class="tag">−50 % · offre de lancement</span>
           </div>
           <ul class="incl">
@@ -386,14 +406,14 @@
         </div>
         <div class="perf" aria-hidden="true"></div>
         <div class="offer-bottom">
-          <a class="cta" href="https://buy.stripe.com/4gM8wReEJcEs2iX1JF3ks00" target="_blank" rel="noopener">Décoller maintenant — 69&nbsp;€&nbsp;→</a>
+          <a class="cta" href="https://buy.stripe.com/4gM8wReEJcEs2iX1JF3ks00" target="_blank" rel="noopener">Décoller maintenant — 70&nbsp;€&nbsp;→</a>
           <p class="guar">Paiement sécurisé par Stripe · Livraison immédiate (lien de duplication Notion)<br>Pas encore sûr·e ? <a href="gratuit.html" target="_blank" rel="noopener" style="color:var(--accent)">Teste les 2 premières sections gratuitement</a>.</p>
         </div>
       </div>
 
       <div class="bump">
         <div class="txt"><b>Tu veux aussi trouver tes premiers clients ?</b><span>Le Plan de Vol + Le Décollage (la machine à clients) en pack.</span></div>
-        <a href="https://buy.stripe.com/9B6cN71RX1ZO2iX73Z3ks02" target="_blank" rel="noopener">Voir le pack — 59&nbsp;€&nbsp;→</a>
+        <a href="https://buy.stripe.com/9B6cN71RX1ZO2iX73Z3ks02" target="_blank" rel="noopener">Voir le pack — 89&nbsp;€&nbsp;→</a>
       </div>
     </section>
 
@@ -434,7 +454,7 @@
       <p class="kick" style="justify-content:center">Prêt·e au décollage</p>
       <h2>Ton projet mérite mieux qu'une note vocale et trois idées en tête.</h2>
       <p class="sub" style="margin:0 auto">Pose-le noir sur blanc ce soir. Avec l'IA comme copilote.</p>
-      <a class="cta" href="https://buy.stripe.com/4gM8wReEJcEs2iX1JF3ks00" target="_blank" rel="noopener">Obtenir Le Plan de Vol — 69&nbsp;€&nbsp;→</a>
+      <a class="cta" href="https://buy.stripe.com/4gM8wReEJcEs2iX1JF3ks00" target="_blank" rel="noopener">Obtenir Le Plan de Vol — 70&nbsp;€&nbsp;→</a>
       <p class="price-hint" style="justify-content:center">Accès à vie · dupliquable dans ton Notion · marche avec ChatGPT ou Claude gratuit</p>
     </section>
 
@@ -471,6 +491,26 @@
   },{threshold:.2});
   var route = document.querySelector('.route');
   if(route) wio.observe(route);
+})();
+</script>
+
+<script>
+/* Décompte offre de lancement — se termine chaque jour à minuit (heure locale du visiteur) */
+(function(){
+  var boxes = document.querySelectorAll('.countdown');
+  if(!boxes.length) return;
+  function pad(n){ return (n<10?'0':'')+n; }
+  function tick(){
+    var now = new Date();
+    var end = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
+    var d = Math.max(0, Math.floor((end - now)/1000));
+    var hh = pad(Math.floor(d/3600)), mm = pad(Math.floor((d%3600)/60)), ss = pad(d%60);
+    boxes.forEach(function(b){
+      var h=b.querySelector('.cdH'), m=b.querySelector('.cdM'), s=b.querySelector('.cdS');
+      if(h) h.textContent=hh; if(m) m.textContent=mm; if(s) s.textContent=ss;
+    });
+  }
+  tick(); setInterval(tick, 1000);
 })();
 </script>
 

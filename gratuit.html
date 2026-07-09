@@ -102,6 +102,15 @@
   .price .cur{font-size:20px;font-weight:700;color:var(--accent)}
   .price .was{color:var(--muted);font-size:15px}
   .price .was s{opacity:.7}
+  .countdown{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 18px;
+    border:1px solid color-mix(in srgb,var(--accent) 45%,var(--line));border-radius:12px;
+    padding:11px 16px;background:color-mix(in srgb,var(--accent) 9%,var(--panel))}
+  .countdown .cd-label{font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--accent);font-weight:600;text-align:left}
+  .countdown .cd-clock{margin-left:auto;font-family:ui-monospace,monospace;font-weight:800;
+    font-size:19px;letter-spacing:.04em;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .countdown .cd-clock .u{color:var(--muted);font-weight:400;font-size:12px;margin:0 4px 0 1px}
+  @media(max-width:480px){.countdown{justify-content:center}.countdown .cd-clock{margin-left:0}}
   .cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;
     background:var(--accent);color:#0B1120;font-size:17px;font-weight:700;padding:16px 30px;border-radius:12px;
     border:0;cursor:pointer;box-shadow:0 8px 22px var(--glow);transition:transform .12s ease,filter .12s ease}
@@ -226,9 +235,13 @@ Commence par ta première question.</code></pre>
       <p class="sub" style="margin:18px 0 0">Et aussi, dans l'espace Notion : validation de l'idée, roadmap & Gantt, mini-guides juridique/finances, et le Mode Turbo (l'IA écrit directement dans ton Notion).</p>
 
       <div class="buybox">
+        <div class="countdown" role="timer">
+          <span class="cd-label">⏳ Offre de lancement −50 % · fin ce soir à minuit</span>
+          <span class="cd-clock"><span class="cdH">00</span><span class="u">h</span><span class="cdM">00</span><span class="u">m</span><span class="cdS">00</span><span class="u">s</span></span>
+        </div>
         <div class="price">
-          <span><span class="cur">€</span><span class="big">69</span></span>
-          <span class="was">au lieu de <s>120&nbsp;€</s> <b style="color:var(--accent)">−50&nbsp;%</b></span>
+          <span><span class="cur">€</span><span class="big">70</span></span>
+          <span class="was">au lieu de <s>140&nbsp;€</s> <b style="color:var(--accent)">−50&nbsp;%</b></span>
         </div>
         <a class="cta" href="https://buy.stripe.com/4gM8wReEJcEs2iX1JF3ks00" target="_blank" rel="noopener">Débloquer le Plan de Vol complet&nbsp;→</a>
         <p class="guar">Accès à vie · dupliqué dans ton Notion · livraison immédiate après paiement</p>
@@ -263,6 +276,23 @@ function fallback(text){
   var ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';
   document.body.appendChild(ta);ta.select();try{document.execCommand('copy');}catch(e){}document.body.removeChild(ta);
 }
+/* Décompte offre de lancement — se termine chaque jour à minuit (heure locale) */
+(function(){
+  var boxes = document.querySelectorAll('.countdown');
+  if(!boxes.length) return;
+  function pad(n){ return (n<10?'0':'')+n; }
+  function tick(){
+    var now = new Date();
+    var end = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
+    var d = Math.max(0, Math.floor((end - now)/1000));
+    var hh = pad(Math.floor(d/3600)), mm = pad(Math.floor((d%3600)/60)), ss = pad(d%60);
+    boxes.forEach(function(b){
+      var h=b.querySelector('.cdH'), m=b.querySelector('.cdM'), s=b.querySelector('.cdS');
+      if(h) h.textContent=hh; if(m) m.textContent=mm; if(s) s.textContent=ss;
+    });
+  }
+  tick(); setInterval(tick, 1000);
+})();
 </script>
 
 </body>
