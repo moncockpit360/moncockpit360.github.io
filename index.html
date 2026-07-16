@@ -8,31 +8,36 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Business Plan Desk — ton business plan clair, validé et prêt à lancer, en une soirée | FounderDesk">
 <meta property="og:description" content="Un copilote t'interroge, tu réponds, chaque section se rédige. Business plan complet en une soirée — validé et transformé en plan de lancement. 70 € au lieu de 140 € (−50 %, offre de lancement).">
-<meta name="theme-color" content="#0B1120">
+<meta name="theme-color" content="#F6F3EC">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>html,body{margin:0;padding:0}*{box-sizing:border-box}</style>
 </head>
 <body>
-<title>Business Plan Desk — ton business plan clair, validé et prêt à lancer, en une soirée | FounderDesk</title>
 <style>
-  /* DA cockpit — thème sombre unique (bleu-nuit + ambre), comme les autres visuels de la marque */
+  /* DA FounderDesk — système « Papier » (clair + moments nuit), charte 2026-07-17 */
   :root,
   :root[data-theme="light"],
   :root[data-theme="dark"]{
-    --bg:#0B1120; --panel:#131D30; --panel-2:#0F1930; --ink:#EAF0F8; --muted:#8A97AD;
-    --accent:#F2A31C; --accent-2:#FFC85C; --line:#25324B; --stub:#0E1626;
-    --glow:rgba(242,163,28,.16);
-    --shadow:0 18px 60px rgba(0,0,0,.55);
-    --focus:#F2A31C;
+    --bg:#F6F3EC; --panel:#FFFFFF; --panel-2:#EDE8DC; --ink:#12161D; --muted:#6B7280;
+    --accent:#F2A31C; --accent-2:#FFC85C; --line:#E2DCCE; --stub:#EDE8DC;
+    --glow:rgba(242,163,28,.22);
+    --shadow:0 14px 44px rgba(18,22,29,.10);
+    --focus:#C97F0A;
   }
 
   *{box-sizing:border-box}
   body{margin:0}
   .page{
     background:var(--bg);color:var(--ink);min-height:100vh;
-    font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     line-height:1.6;-webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
+  h1,h2,h3,.cta,.brand{font-family:'Space Grotesk','Inter',system-ui,sans-serif}
+  .blok{display:inline-block;width:.62em;height:.16em;background:var(--accent);border-radius:.06em;margin-left:.08em;vertical-align:.06em}
   .wrap{width:100%;max-width:780px;margin:0 auto;padding:0 20px}
   .mono{font-family:ui-monospace,SFMono-Regular,Menlo,"Cascadia Mono",monospace}
 
@@ -55,8 +60,7 @@
   .hero{padding:clamp(30px,7vw,64px) 0 12px;position:relative}
   .hero-top{display:flex;justify-content:space-between;align-items:center;gap:16px;
     padding-top:clamp(18px,4vw,30px);flex-wrap:wrap}
-  .brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em}
-  .brand .bmark{font-size:18px;color:var(--accent)}
+  .brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.03em;font-size:20px}
   .brand .bsub{font-family:ui-monospace,monospace;font-size:10.5px;letter-spacing:.16em;
     text-transform:uppercase;color:var(--muted);font-weight:500}
 
@@ -80,12 +84,12 @@
 
   .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
   .cta{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;
-    background:var(--accent);color:#0B1120;font-size:16px;font-weight:700;letter-spacing:.01em;
+    background:var(--accent);color:#12161D;font-size:16px;font-weight:700;letter-spacing:.01em;
     padding:15px 26px;border-radius:12px;border:0;cursor:pointer;
     box-shadow:0 8px 22px var(--glow);transition:transform .12s ease,filter .12s ease}
   .cta:hover{filter:brightness(1.06);transform:translateY(-1px)}
   .cta:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
-  .cta.ghost{background:transparent;color:var(--accent);border:1.5px solid var(--line);box-shadow:none}
+  .cta.ghost{background:transparent;color:var(--ink);border:1.5px solid #CFC9BA;box-shadow:none}
   .cta.ghost:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent);filter:none}
   .price-hint{font-size:13.5px;color:var(--muted);margin:14px 0 0;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 
@@ -162,7 +166,7 @@
   .route-end{display:flex;gap:20px;align-items:center;margin-top:6px;padding-left:0}
   .route-end .mk{flex:0 0 auto;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
     background:var(--accent);color:var(--panel);font-size:18px;box-shadow:0 0 0 5px var(--glow)}
-  :root[data-theme="dark"] .route-end .mk{color:#0B1120}
+  .route-end .mk{color:#12161D}
   .route-end .t{font-weight:700}
   .route-end .d{color:var(--muted);font-size:14px;margin-top:2px}
 
@@ -260,8 +264,9 @@
 
   /* ===== BANDEROLE DÉFILANTE (announcement bar) ===== */
   .ticker{display:block;text-decoration:none;overflow:hidden;white-space:nowrap;
-    background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#0B1120;
+    background:#12161D;color:#F6F3EC;
     border-bottom:1px solid rgba(0,0,0,.25);position:relative;z-index:20}
+  .ticker-group span b{color:var(--accent);font-weight:700}
   .ticker-track{display:inline-flex;align-items:center;
     animation:ticker 26s linear infinite;will-change:transform}
   .ticker:hover .ticker-track{animation-play-state:paused}
@@ -269,7 +274,7 @@
   .ticker-group span{display:inline-flex;align-items:center;
     font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:700;
     font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;padding:9px 0}
-  .ticker-group span::after{content:"✈";margin:0 22px;opacity:.55;font-size:11px}
+  .ticker-group span::after{content:"▪";margin:0 22px;color:var(--accent);opacity:.9;font-size:11px}
   @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
   @media(max-width:480px){.ticker-group span{font-size:11px}.ticker-track{animation-duration:20s}}
 
@@ -299,7 +304,7 @@
   .lm-form input[type=email]{width:100%;font-size:15.5px;padding:14px 15px;border-radius:11px;
     border:1px solid var(--line);background:var(--panel-2);color:var(--ink);outline:none}
   .lm-form input[type=email]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
-  .lm-form button{width:100%;border:0;cursor:pointer;background:var(--accent);color:#0B1120;
+  .lm-form button{width:100%;border:0;cursor:pointer;background:var(--accent);color:#12161D;
     font-size:16px;font-weight:700;padding:15px 18px;border-radius:11px;
     box-shadow:0 8px 22px var(--glow);transition:transform .12s ease,filter .12s ease}
   .lm-form button:hover{filter:brightness(1.06);transform:translateY(-1px)}
@@ -325,7 +330,7 @@
   .cap-form input[type=email]{width:100%;font-size:15.5px;padding:14px 15px;border-radius:11px;
     border:1px solid var(--line);background:var(--panel-2);color:var(--ink);outline:none}
   .cap-form input[type=email]:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow)}
-  .cap-form button{width:100%;border:0;cursor:pointer;background:var(--accent);color:#0B1120;
+  .cap-form button{width:100%;border:0;cursor:pointer;background:var(--accent);color:#12161D;
     font-size:15.5px;font-weight:700;padding:14px 18px;border-radius:11px;
     box-shadow:0 8px 22px var(--glow);transition:transform .12s ease,filter .12s ease}
   .cap-form button:hover{filter:brightness(1.06);transform:translateY(-1px)}
@@ -348,6 +353,19 @@
     background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent);font-size:20px}
   .founder .sig .who b{display:block;letter-spacing:-.01em}
   .founder .sig .who span{color:var(--muted);font-size:13px}
+
+  /* ===== MOMENT NUIT : le bloc d'offre passe en encre (projecteur) ===== */
+  .offer{background:#12161D;border-color:#2A3340;color:#F6F3EC}
+  .offer h2{color:#F6F3EC}
+  .offer .sub{color:#A8ADB8}
+  .offer .offer-label{color:#8D93A0}
+  .offer .priceline .was{color:#8D93A0}
+  .offer .incl li::before{background:rgba(242,163,28,.18)}
+  .offer .perf{border-top-color:#2A3340}
+  .offer-bottom{background:#0C1016}
+  .offer .guar{color:#8D93A0}
+  .offer .countdown{border-color:rgba(242,163,28,.5);background:#1B212B}
+  .offer .countdown .cd-clock{color:#F6F3EC}
 
   @media (prefers-reduced-motion:reduce){
     *{animation:none!important;transition:none!important}
@@ -387,7 +405,7 @@
     <!-- HERO -->
     <header class="hero">
       <div class="hero-top">
-        <span class="brand"><span class="bmark">✈</span>FounderDesk<span class="bsub">·&nbsp;Business&nbsp;Plan&nbsp;Desk</span></span>
+        <span class="brand">founderdesk<span class="blok"></span><span class="bsub">·&nbsp;business&nbsp;plan&nbsp;desk</span></span>
         <span class="eyebrow"><span class="dot"></span>La méthode anti-page blanche</span>
       </div>
 
@@ -396,11 +414,11 @@
           <h1>Ton business plan, clair et <span class="amb">prêt à lancer</span>.<br>En une soirée, pas en trois mois.</h1>
           <p class="lede">Un copilote te pose les bonnes questions, une par une — puis rédige chaque section à ta place. On <strong>teste ensuite sa viabilité</strong> et on le transforme en <strong>feuille de route de lancement</strong>. Fini la page blanche.</p>
         </div>
-        <div class="gauge" role="img" aria-label="Indicateur de cap — prêt au décollage">
+        <div class="gauge" role="img" aria-label="Cadran de progression — 7 sections">
           <div class="ring"></div>
           <div class="needle"></div>
           <div class="cap"></div>
-          <div class="hdg mono">HDG&nbsp;360</div>
+          <div class="hdg mono">7&nbsp;SECTIONS</div>
         </div>
       </div>
 
@@ -419,7 +437,7 @@
         <div><div class="n">7</div><div class="l">sections guidées</div></div>
         <div><div class="n">8</div><div class="l">prompts-interview</div></div>
         <div><div class="n">2</div><div class="l">modes IA</div></div>
-        <div><div class="n">~2 h</div><div class="l">de vol</div></div>
+        <div><div class="n">~2 h</div><div class="l">chrono</div></div>
       </div>
     </header>
 
@@ -463,9 +481,9 @@
 
     <!-- ROUTE : 7 waypoints -->
     <section class="rv">
-      <p class="kick">Le plan de vol</p>
+      <p class="kick">Le parcours</p>
       <h2>7 étapes. De l'idée au dossier complet.</h2>
-      <p class="sub" style="margin-bottom:6px">Chaque étape est une section guidée avec son prompt-interview. Tu les suis dans l'ordre — comme une trajectoire.</p>
+      <p class="sub" style="margin-bottom:6px">Chaque étape est une section guidée avec son prompt-interview. Tu les suis dans l'ordre, section par section.</p>
       <div class="route">
         <div class="wp"><div class="mk">01</div><div class="body"><p class="t">Vision</p><p class="d">Où tu vas, et pourquoi ça compte.</p></div><span class="arr mono">↓</span></div>
         <div class="wp"><div class="mk">02</div><div class="body"><p class="t">Produit / Service</p><p class="d">Ce que tu vends, expliqué clairement.</p></div><span class="arr mono">↓</span></div>
@@ -483,9 +501,9 @@
 
     <!-- ABOARD -->
     <section class="rv">
-      <p class="kick">Le poste de pilotage</p>
+      <p class="kick">Ton espace de travail</p>
       <h2>Bien plus qu'un plan : tout ce qu'il faut pour lancer.</h2>
-      <p class="sub">Le business plan n'est que le début. À l'intérieur, un vrai cockpit de fondateur·rice.</p>
+      <p class="sub">Le business plan n'est que le début. À l'intérieur, un vrai bureau de fondateur·rice.</p>
       <div class="grid2">
         <div class="card"><span class="ico">🔎</span><h3>Validation</h3><p>Score de viabilité sur 6 axes, pré-mortem, 5 preuves de demande, SWOT et analyse concurrence. Pour savoir si l'idée tient avant d'y mettre de l'énergie.</p></div>
         <div class="card"><span class="ico">🗺️</span><h3>Roadmap & Gantt</h3><p>Une feuille de route Notion prête à l'emploi : vue Timeline (Gantt) et vue Board par catégorie. Tu vois quoi faire, et quand.</p></div>
@@ -497,7 +515,7 @@
 
     <!-- MODES -->
     <section class="rv">
-      <p class="kick">Deux façons de piloter</p>
+      <p class="kick">Deux façons de travailler</p>
       <h2>Que tu paies l'IA ou non, tu avances.</h2>
       <div class="modes">
         <div class="mode">
@@ -522,7 +540,7 @@
         <p>Un jour, j'ai inversé le problème. Au lieu de fixer une page vide, j'ai laissé un copilote me <strong>poser les bonnes questions</strong>, une par une, et rédiger à ma place. En une soirée, j'avais un plan clair, chiffré, et — pour la première fois — <strong>honnête</strong>. C'est cet outil que j'ai eu envie de donner à d'autres.</p>
         <p>Business Plan Desk, ce n'est pas un énième template vide. C'est la méthode que j'aurais aimé avoir quand j'ai commencé : simple, guidée, faite pour <strong>décider et lancer</strong> — pas pour impressionner un jury.</p>
         <div class="sig">
-          <span class="av">✈</span>
+          <span class="av" style="font-family:'Space Grotesk';font-weight:700;font-size:15px;letter-spacing:-.02em">fd</span>
           <div class="who"><b>[Ton prénom]</b><span>Fondatrice · FounderDesk</span></div>
         </div>
       </div>
@@ -532,7 +550,7 @@
     <section id="offre" class="rv">
       <div class="offer">
         <div class="offer-top">
-          <div class="offer-label"><span>Carte d'embarquement</span><span class="plane">✈</span></div>
+          <div class="offer-label"><span>Ton accès complet</span><span class="plane" style="color:var(--accent)">▪</span></div>
           <h2>Business Plan Desk</h2>
           <p class="sub" style="margin-top:6px">L'espace complet : les 7 sections guidées, la synthèse, la validation, la roadmap et les fondations.</p>
           <div class="countdown" role="timer" style="margin:14px 0 2px">
@@ -556,7 +574,7 @@
         </div>
         <div class="perf" aria-hidden="true"></div>
         <div class="offer-bottom">
-          <a class="cta" href="https://buy.stripe.com/aFa8wR8gl7k86zd1JF3ks05" target="_blank" rel="noopener">Décoller maintenant — 70&nbsp;€&nbsp;→</a>
+          <a class="cta" href="https://buy.stripe.com/aFa8wR8gl7k86zd1JF3ks05" target="_blank" rel="noopener">Je commence ce soir — 70&nbsp;€&nbsp;→</a>
           <p class="guar">Paiement sécurisé par Stripe · Livraison immédiate (lien de duplication Notion)<br>Pas encore sûr·e ? <a href="gratuit.html" target="_blank" rel="noopener" style="color:var(--accent)">Teste les 2 premières sections gratuitement</a>.</p>
         </div>
       </div>
@@ -569,7 +587,7 @@
 
     <!-- FAQ -->
     <section class="rv">
-      <p class="kick">Avant de décoller</p>
+      <p class="kick">Avant de te décider</p>
       <h2>Les questions qu'on se pose.</h2>
       <div class="faq">
         <details>
@@ -620,7 +638,7 @@
 
     <!-- FINAL -->
     <section class="final rv">
-      <p class="kick" style="justify-content:center">Prêt·e au décollage</p>
+      <p class="kick" style="justify-content:center">Prêt·e à te lancer</p>
       <h2>Ton projet mérite mieux qu'une note vocale et trois idées en tête.</h2>
       <p class="sub" style="margin:0 auto">Pose-le noir sur blanc ce soir. Un copilote t'accompagne, question après question.</p>
       <a class="cta" href="https://buy.stripe.com/aFa8wR8gl7k86zd1JF3ks05" target="_blank" rel="noopener">Obtenir Business Plan Desk — 70&nbsp;€&nbsp;→</a>
@@ -689,7 +707,7 @@
     <button class="lm-close" id="lmClose" type="button" aria-label="Fermer">✕</button>
     <span class="lm-eyebrow">🎁 Guide offert</span>
     <h3 id="lmTitle">Les <span class="amb">9 erreurs</span> qui plombent un business plan.</h3>
-    <p class="lm-sub">Et surtout : comment les éviter dès la première page. Reçois le guide gratuit par email — plus un accès aux 2 premières sections du Plan de Vol.</p>
+    <p class="lm-sub">Et surtout : comment les éviter dès la première page. Reçois le guide gratuit par email — plus un accès aux 2 premières sections de Business Plan Desk.</p>
 
     <!-- Le formulaire poste vers Brevo sans quitter la page (iframe cachée).
          ⚠️ À BRANCHER : remplace __BREVO_FORM_ACTION__ par l'URL du formulaire Brevo
@@ -699,12 +717,12 @@
       <input type="email" name="EMAIL" id="lmEmail" placeholder="ton@email.com" autocomplete="email" required>
       <button type="submit">Recevoir le guide gratuit&nbsp;→</button>
     </form>
-    <p class="lm-fine">Zéro spam. Désinscription en un clic. Tu recevras aussi les nouveautés du Plan de Vol.</p>
+    <p class="lm-fine">Zéro spam. Désinscription en un clic. Tu recevras aussi les nouveautés FounderDesk.</p>
 
     <div class="lm-success" id="lmSuccess">
       <div class="big">🎉</div>
       <h3>Ton guide est prêt&nbsp;!</h3>
-      <p class="lm-sub" style="margin-bottom:16px">Clique pour l'ouvrir tout de suite. On t'enverra aussi les prochaines nouveautés du Plan de Vol par email.</p>
+      <p class="lm-sub" style="margin-bottom:16px">Clique pour l'ouvrir tout de suite. On t'enverra aussi les prochaines nouveautés FounderDesk par email.</p>
       <a class="cta" href="guide.html" target="_blank" rel="noopener" style="width:100%">Ouvrir le guide « 9 erreurs »&nbsp;→</a>
     </div>
   </div>
