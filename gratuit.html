@@ -126,6 +126,12 @@
   .seemore:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
   .guar{margin-top:14px;font-size:13px;color:var(--muted)}
 
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--muted);margin:0 0 14px;text-align:left;max-width:420px;margin-left:auto;margin-right:auto}
+  .consent input{margin-top:3px;flex:0 0 auto;width:16px;height:16px;accent-color:var(--accent);cursor:pointer}
+  .consent label{cursor:pointer;line-height:1.5}
+  .consent a{color:var(--accent)}
+  .cta.locked{opacity:.5;filter:grayscale(.35);cursor:not-allowed}
+
   footer{border-top:1px solid var(--line);margin-top:46px;padding:26px 0 44px;color:var(--muted);
     font-size:12.5px;line-height:1.8;text-align:center}
   footer .mono{letter-spacing:.04em}
@@ -239,15 +245,18 @@ Commence par ta première question.</code></pre>
       <p class="sub" style="margin:18px 0 0">Et aussi, dans l'espace Notion : validation de l'idée, roadmap & Gantt, mini-guides juridique/finances, et le Mode Turbo (l'IA écrit directement dans ton Notion).</p>
 
       <div class="buybox">
-        <div class="countdown" role="timer">
-          <span class="cd-label">⏳ Offre de lancement −50 % · fin ce soir à minuit</span>
-          <span class="cd-clock"><span class="cdH">00</span><span class="u">h</span><span class="cdM">00</span><span class="u">m</span><span class="cdS">00</span><span class="u">s</span></span>
+        <div class="countdown" role="note">
+          <span class="cd-label">⏳ Offre de lancement −50 % · durée limitée</span>
         </div>
         <div class="price">
           <span><span class="cur">€</span><span class="big">70</span></span>
           <span class="was">au lieu de <s>140&nbsp;€</s> <b style="color:var(--accent)">−50&nbsp;%</b></span>
         </div>
-        <a class="cta" href="https://buy.stripe.com/aFa8wR8gl7k86zd1JF3ks05" target="_blank" rel="noopener">Débloquer Business Plan Desk complet&nbsp;→</a>
+        <div class="consent">
+          <input type="checkbox" id="cgvConsent">
+          <label for="cgvConsent">J'ai lu et j'accepte les <a href="cgv.html" target="_blank" rel="noopener">CGV</a>, et je renonce expressément à mon droit de rétractation pour un accès immédiat au contenu numérique.</label>
+        </div>
+        <a class="cta stripe-buy" href="https://buy.stripe.com/aFa8wR8gl7k86zd1JF3ks05" target="_blank" rel="noopener">Débloquer Business Plan Desk complet&nbsp;→</a>
         <p class="guar">Accès à vie · dupliqué dans ton Notion · livraison immédiate après paiement</p>
         <br>
         <a class="seemore" href="index.html" target="_blank" rel="noopener">Voir la présentation complète du produit →</a>
@@ -258,7 +267,10 @@ Commence par ta première question.</code></pre>
       <span class="mono">BUSINESS PLAN DESK — BY FOUNDERDESK</span><br>
       Les 2 sections offertes sont à toi, librement.
       <span class="sep">·</span> Paiement sécurisé Stripe
-      <span class="sep">·</span> Fabriqué en France 🇫🇷
+      <span class="sep">·</span> Fabriqué en France 🇫🇷<br>
+      <a href="mentions-legales.html" style="color:var(--muted)">Mentions légales</a>
+      <span class="sep">·</span> <a href="cgv.html" style="color:var(--muted)">CGV</a>
+      <span class="sep">·</span> <a href="confidentialite.html" style="color:var(--muted)">Confidentialité</a>
     </footer>
 
   </div>
