@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>html,body{margin:0;padding:0}*{box-sizing:border-box}</style>
+<style>html{scroll-behavior:smooth}html,body{margin:0;padding:0}*{box-sizing:border-box}</style>
 </head>
 <body>
 <style>
@@ -119,8 +119,33 @@
     letter-spacing:.02em;display:flex;align-items:center;gap:9px}
   .proof b{color:var(--ink);font-weight:700}
 
+  /* ===== NAVIGATION STICKY ===== */
+  .topnav{position:sticky;top:0;z-index:15;
+    background:color-mix(in srgb,var(--bg) 88%,transparent);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line)}
+  .topnav-inner{max-width:780px;margin:0 auto;padding:12px 20px;
+    display:flex;align-items:center;gap:18px}
+  .topnav-brand{font-family:'Space Grotesk','Inter',system-ui,sans-serif;font-weight:700;
+    font-size:15px;color:var(--ink);text-decoration:none;letter-spacing:-.02em;
+    flex:0 0 auto;display:inline-flex;align-items:center}
+  .topnav-links{display:flex;gap:4px;flex:1 1 auto;overflow-x:auto;scrollbar-width:none}
+  .topnav-links::-webkit-scrollbar{display:none}
+  .topnav-links a{white-space:nowrap;text-decoration:none;color:var(--muted);
+    font-size:13.5px;font-weight:600;padding:8px 11px;border-radius:8px;
+    transition:color .14s ease,background .14s ease}
+  .topnav-links a:hover{color:var(--ink);background:var(--panel-2)}
+  .topnav-links a:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+  .topnav-cta{flex:0 0 auto;white-space:nowrap;text-decoration:none;background:var(--accent);
+    color:#12161D;font-size:13.5px;font-weight:700;padding:9px 15px;border-radius:9px;
+    transition:filter .12s ease,transform .12s ease}
+  .topnav-cta:hover{filter:brightness(1.06);transform:translateY(-1px)}
+  .topnav-cta:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+  @media(max-width:560px){.topnav-links{gap:2px}.topnav-links a{padding:8px 8px;font-size:12.5px}}
+
   /* ===== SECTION SHELL ===== */
-  section{padding:clamp(40px,8vw,72px) 0}
+  section{padding:clamp(40px,8vw,72px) 0;border-top:1px solid var(--line)}
+  section[id]{scroll-margin-top:72px}
   .kick{font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
     color:var(--accent);margin:0 0 12px;display:flex;align-items:center;gap:9px}
   .kick::before{content:"";width:22px;height:1px;background:var(--accent)}
@@ -233,6 +258,14 @@
     transition:border-color .14s ease}
   .bump a:hover{border-color:var(--accent)}
   .bump a:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  /* consentement CGV avant achat */
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:var(--muted);margin:14px 0 4px;text-align:left}
+  .consent input{margin-top:3px;flex:0 0 auto;width:16px;height:16px;accent-color:var(--accent);cursor:pointer}
+  .consent label{cursor:pointer;line-height:1.5}
+  .consent a{color:var(--accent)}
+  .offer .consent{color:#A8ADB8}
+  .cta.locked{opacity:.5;filter:grayscale(.35);cursor:not-allowed}
 
   /* faq */
   .faq{display:grid;gap:12px;margin-top:26px}
@@ -423,14 +456,13 @@
       </div>
 
       <div class="cta-row">
-        <a class="cta" href="https://buy.stripe.com/aFa8wR8gl7k86zd1JF3ks05" target="_blank" rel="noopener">Obtenir Business Plan Desk&nbsp;→</a>
+        <a class="cta" href="#offre">Obtenir Business Plan Desk&nbsp;→</a>
         <a class="cta ghost" href="gratuit.html" target="_blank" rel="noopener">Essayer 2 sections gratuitement</a>
       </div>
       <p class="price-hint"><span class="strike">140&nbsp;€</span> <b style="color:var(--ink)">70&nbsp;€</b> <b style="color:var(--accent)">−50&nbsp;%</b> · accès à vie · dupliquable dans ton Notion · marche avec ChatGPT ou Claude gratuit</p>
 
-      <div class="countdown" role="timer">
-        <span class="cd-label">⏳ Offre de lancement −50 % · fin ce soir à minuit</span>
-        <span class="cd-clock"><span class="cdH">00</span><span class="u">h</span><span class="cdM">00</span><span class="u">m</span><span class="cdS">00</span><span class="u">s</span></span>
+      <div class="countdown" role="note">
+        <span class="cd-label">⏳ Offre de lancement −50 % · durée limitée</span>
       </div>
 
       <div class="readout" aria-label="Repères produit">
@@ -541,7 +573,7 @@
         <p>Business Plan Desk, ce n'est pas un énième template vide. C'est la méthode que j'aurais aimé avoir quand j'ai commencé : simple, guidée, faite pour <strong>décider et lancer</strong> — pas pour impressionner un jury.</p>
         <div class="sig">
           <span class="av" style="font-family:'Space Grotesk';font-weight:700;font-size:15px;letter-spacing:-.02em">fd</span>
-          <div class="who"><b>[Ton prénom]</b><span>Fondatrice · FounderDesk</span></div>
+          <div class="who"><b>Fondatrice</b><span>FounderDesk</span></div>
         </div>
       </div>
     </section>
@@ -553,9 +585,8 @@
           <div class="offer-label"><span>Ton accès complet</span><span class="plane" style="color:var(--accent)">▪</span></div>
           <h2>Business Plan Desk</h2>
           <p class="sub" style="margin-top:6px">L'espace complet : les 7 sections guidées, la synthèse, la validation, la roadmap et les fondations.</p>
-          <div class="countdown" role="timer" style="margin:14px 0 2px">
-            <span class="cd-label">⏳ Offre de lancement −50 % · fin ce soir à minuit</span>
-            <span class="cd-clock"><span class="cdH">00</span><span class="u">h</span><span class="cdM">00</span><span class="u">m</span><span class="cdS">00</span><span class="u">s</span></span>
+          <div class="countdown" role="note" style="margin:14px 0 2px">
+            <span class="cd-label">⏳ Offre de lancement −50 % · durée limitée</span>
           </div>
           <div class="priceline">
             <span><span class="cur">€</span><span class="big">70</span></span>
@@ -574,14 +605,18 @@
         </div>
         <div class="perf" aria-hidden="true"></div>
         <div class="offer-bottom">
-          <a class="cta" href="https://buy.stripe.com/aFa8wR8gl7k86zd1JF3ks05" target="_blank" rel="noopener">Je commence ce soir — 70&nbsp;€&nbsp;→</a>
+          <div class="consent">
+            <input type="checkbox" id="cgvConsent">
+            <label for="cgvConsent">J'ai lu et j'accepte les <a href="cgv.html" target="_blank" rel="noopener">CGV</a>, et je renonce expressément à mon droit de rétractation pour un accès immédiat au contenu numérique.</label>
+          </div>
+          <a class="cta stripe-buy" href="https://buy.stripe.com/aFa8wR8gl7k86zd1JF3ks05" target="_blank" rel="noopener">Je commence ce soir — 70&nbsp;€&nbsp;→</a>
           <p class="guar">Paiement sécurisé par Stripe · Livraison immédiate (lien de duplication Notion)<br>Pas encore sûr·e ? <a href="gratuit.html" target="_blank" rel="noopener" style="color:var(--accent)">Teste les 2 premières sections gratuitement</a>.</p>
         </div>
       </div>
 
       <div class="bump">
         <div class="txt"><b>Tu veux aussi trouver tes premiers clients ?</b><span>Business Plan Desk + First Clients Desk (la machine à clients) en pack.</span></div>
-        <a href="https://buy.stripe.com/4gM4gB7ch6g4f5J73Z3ks03" target="_blank" rel="noopener">Voir le pack — 89&nbsp;€&nbsp;→</a>
+        <a class="stripe-buy" href="https://buy.stripe.com/4gM4gB7ch6g4f5J73Z3ks03" target="_blank" rel="noopener">Voir le pack — 89&nbsp;€&nbsp;→</a>
       </div>
     </section>
 
@@ -641,7 +676,7 @@
       <p class="kick" style="justify-content:center">Prêt·e à te lancer</p>
       <h2>Ton projet mérite mieux qu'une note vocale et trois idées en tête.</h2>
       <p class="sub" style="margin:0 auto">Pose-le noir sur blanc ce soir. Un copilote t'accompagne, question après question.</p>
-      <a class="cta" href="https://buy.stripe.com/aFa8wR8gl7k86zd1JF3ks05" target="_blank" rel="noopener">Obtenir Business Plan Desk — 70&nbsp;€&nbsp;→</a>
+      <a class="cta" href="#offre">Obtenir Business Plan Desk — 70&nbsp;€&nbsp;→</a>
       <p class="price-hint" style="justify-content:center">Accès à vie · dupliquable dans ton Notion · marche avec ChatGPT ou Claude gratuit</p>
     </section>
 
@@ -649,7 +684,10 @@
       <span class="mono">BUSINESS PLAN DESK — BY FOUNDERDESK</span><br>
       Licence personnelle — revente et redistribution interdites.
       <span class="sep">·</span> Paiement sécurisé Stripe
-      <span class="sep">·</span> Fabriqué en France 🇫🇷
+      <span class="sep">·</span> Fabriqué en France 🇫🇷<br>
+      <a href="mentions-legales.html" style="color:var(--muted)">Mentions légales</a>
+      <span class="sep">·</span> <a href="cgv.html" style="color:var(--muted)">CGV</a>
+      <span class="sep">·</span> <a href="confidentialite.html" style="color:var(--muted)">Confidentialité</a>
     </footer>
 
   </div>
@@ -682,22 +720,28 @@
 </script>
 
 <script>
-/* Décompte offre de lancement — se termine chaque jour à minuit (heure locale du visiteur) */
+/* Consentement CGV requis avant tout clic sur un lien d'achat Stripe */
 (function(){
-  var boxes = document.querySelectorAll('.countdown');
-  if(!boxes.length) return;
-  function pad(n){ return (n<10?'0':'')+n; }
-  function tick(){
-    var now = new Date();
-    var end = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 59, 999);
-    var d = Math.max(0, Math.floor((end - now)/1000));
-    var hh = pad(Math.floor(d/3600)), mm = pad(Math.floor((d%3600)/60)), ss = pad(d%60);
-    boxes.forEach(function(b){
-      var h=b.querySelector('.cdH'), m=b.querySelector('.cdM'), s=b.querySelector('.cdS');
-      if(h) h.textContent=hh; if(m) m.textContent=mm; if(s) s.textContent=ss;
+  var box = document.getElementById('cgvConsent');
+  var links = document.querySelectorAll('.stripe-buy');
+  if(!box || !links.length) return;
+  function sync(){
+    links.forEach(function(a){
+      if(box.checked){ a.classList.remove('locked'); a.removeAttribute('aria-disabled'); }
+      else { a.classList.add('locked'); a.setAttribute('aria-disabled','true'); }
     });
   }
-  tick(); setInterval(tick, 1000);
+  box.addEventListener('change', sync);
+  links.forEach(function(a){
+    a.addEventListener('click', function(e){
+      if(!box.checked){
+        e.preventDefault();
+        box.scrollIntoView({behavior:'smooth', block:'center'});
+        box.focus();
+      }
+    });
+  });
+  sync();
 })();
 </script>
 
